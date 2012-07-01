@@ -1,0 +1,15 @@
+* {margin:0;padding:0;}
+
+body {
+	/*font-family:Veranda,Tahoma,Arial,Helvetica,sans-serif;*/
+    font-family:  Veranda,Tahoma,Arial,Helvetica,sans-serif;
+}
+
+input {
+	width: 8em;
+	height: 3em;
+}
+
+.gray {
+	color:#ddd;
+}

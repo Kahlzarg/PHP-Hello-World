@@ -1,0 +1,22 @@
+  div.progress{
+    /*make visible*/
+    display:block;
+
+    /*position it 200px down the screen*/
+    position:absolute;
+    width:8em;
+    height:3em;
+    line-height:100%;
+    text-align:center;
+    z-index:1500;
+
+    /*in supporting browsers, make it
+      a little transparent*/
+    background:#eee;
+    filter: alpha(opacity=75); /* internet explorer */
+    -khtml-opacity: 0.75;      /* khtml, old safari */
+    -moz-opacity: 0.75;       /* mozilla, netscape */
+    opacity: 0.75;           /* fx, safari, opera */
+    border:1px solid #ccc;
+    border-radius: 3em;
+  }

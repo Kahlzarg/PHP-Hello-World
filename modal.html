@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Modal Test</title>
+
+<script type="text/javascript" src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'></script>
+
+<script type="text/javascript" src='js/namespaces.js'></script>
+<script type="text/javascript" src='js/modal.js'></script>
+
+<link type="text/css" href='css/modal.css' rel="stylesheet">
+
+<head>
+
+<style>
+#mask {
+  position:absolute;
+  left:0;
+  top:0;
+  z-index:9000;
+  background-color:#000;
+  display:none;
+}
+
+#boxes .window {
+  position:fixed;
+  left:0;
+  top:0;
+  width:440px;
+  height:200px;
+  display:none;
+  z-index:9999;
+  padding:20px;
+}
+
+#boxes #dialog {
+  width:375px;
+  height:203px;
+  padding:10px;
+  background-color:#ffffff;
+}
+
+#boxes #dialog2 {
+  background:url(images/notice.png) no-repeat 0 0 transparent;
+  width:326px;
+  height:229px;
+  padding:50px 0 20px 25px;
+}
+</style>
+
+<script>
+
+function Submit(){
+	//Mask();
+	CatalystLogic.Modal.ShowModal();
+};
+
+function Mask(){
+
+     //Get the screen height and width
+     var maskHeight = $(document).height();
+     var maskWidth = $(window).width();
+
+     //Set heigth and width to mask to fill up the whole screen
+     $('#mask').css({'width':maskWidth,'height':maskHeight});
+
+     //transition effect        
+     //$('#mask').fadeIn(1000);    
+     $('#mask').fadeTo("slow",0.6);
+
+    //if mask is clicked
+    $('#mask').click(function () {
+        $(this).hide();
+        $('.window').hide();
+    });            
+
+   
+}
+
+$(window).resize(function () {
+
+   //Get the screen height and width
+   var maskHeight = $(document).height();
+   var maskWidth = $(window).width();
+
+   //Set height and width to mask to fill up the whole screen
+   $('#mask').css({'width':maskWidth,'height':maskHeight});
+
+}); 
+
+</script>
+
+</head>
+
+<body>
+	<div>
+		Hello World via HTML
+		<div>
+			<input type="button" id="button" value="Submit" onclick="Submit();">
+		</div>	
+	</div>
+
+  <!-- Mask to cover the whole screen -->
+  <div id="mask"></div>
+
+</body>
