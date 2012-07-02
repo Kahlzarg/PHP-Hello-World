@@ -18,3 +18,4 @@ RegisterNS("js.Mask");
 RegisterNS("js.Progress");
 RegisterNS("js.TimeOut");
 RegisterNS("js.Pages.Index");
+RegisterNS("js.Pages.Mobile");
